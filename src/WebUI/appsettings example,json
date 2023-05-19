@@ -1,0 +1,30 @@
+{
+  "UseInMemoryDatabase": false,
+  "ConnectionStrings": {
+    "DefaultConnection": ""
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "MailSettings":{
+    "Mail":"",
+    "DisplayName": "",
+    "Password":"",
+    "Host": "",
+    "Port": 0
+  },
+  "JwtSettings": {
+    "Key": "",
+    "Issuer": "",
+    "Audience":"",
+    "ExpirationMinutes":0
+  },
+  "Stripe":{
+    "PublishedKey":"",
+    "SecretKey":"",
+    "WebhookSecret":""
+  }
+}

@@ -1,0 +1,28 @@
+version: '3.4'
+networks:
+  ShopApi:
+    driver: bridge
+services:
+  webui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - "ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=diper;User id=diper;Password=diper"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - ShopApi
+  db:
+    image: "postgres"
+    container_name: db
+    ports:
+      - '5433:5433'
+    environment:
+      POSTGRES_USER: "diper"
+      POSTGRES_PASSWORD: "diper"
+      POSTGRES_DB: "diper"
+    networks:
+      - ShopApi
